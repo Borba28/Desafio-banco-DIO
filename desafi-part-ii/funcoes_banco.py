@@ -3,6 +3,7 @@ def extrato(extrato, saldo):
     print('Não foram realizadas movimentações.' if not extrato else extrato)
     print(f'\nSaldo:\t\tR$ {saldo:2f}')
 
+
 def question(frase, escolhas):
     while True:
         try:
@@ -55,9 +56,11 @@ def deposito(saldo, valor_de_deposito, extrato, /):
     extrato += f'Deposito: \tR${valor_de_deposito:.2f}\n'
     return saldo, extrato
 
+
 def filtrar_usuario(cpf, cadastro2):
     usuarios_filtrados = [usuario for usuario in cadastro2 if usuario['cpf'] == cpf]
     return usuarios_filtrados[0] if usuarios_filtrados else None
+
 
 def new_user(cadastro2):
     cpf = input('Digite seu CPF: ')
@@ -76,8 +79,6 @@ def new_user(cadastro2):
     return cadastro2
 
 
-
-
 def criar_conta_corrente(agencia, numero_conta, usuarios):
     cpf = input('Informe o CPF do usuario: ')
     usuario = filtrar_usuario(cpf, usuarios)
@@ -88,6 +89,7 @@ def criar_conta_corrente(agencia, numero_conta, usuarios):
     
     print("Úsuario não encontrado, fluxo de criação de conta encerrado!")
     return None
+
 
 def listar_contas(contas):
     for conta in contas:
